@@ -1,8 +1,8 @@
 {
   "name"              : "jp-toolkit/html-helper",
   "type"              : "library",
-  "description"       : "A helper classes that provides a set of static methods for generating commonly used HTML tags.",
-  "keywords"          : [ "wordpress", "plugin", "theme", "jp-toolkit", "html", "form" ],
+  "description"       : "A helper classes based on Laravel Forms, CodeIgniter HTML helper and Yii Framework BaseHtml helper that provides a set of static methods for generating commonly used HTML tags to use in WordPress themes and/or plugins.",
+  "keywords"          : [ "wordpress", "wordpress-development", "wordpress-plugin", "wordpress-theme", "jp-toolkit", "html", "form" ],
   "homepage"          : "https://github.com/jprieton/jp-toolkit-html-helper/", 
   "license"           : "GPL-3.0-or-later",
   "minimum-stability" : "stable",
