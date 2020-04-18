@@ -100,7 +100,7 @@ class Html {
     self::parse_shorthand( $tag, $attributes );
 
     // This filter allows to you override the tag attributes.
-    $attributes = apply_filters( "jp_toolkit_helpers_html_{$tag}_attributes", $attributes, $tag );
+    $attributes = apply_filters( "jp_toolkit_html_helper_html_{$tag}_attributes", $attributes, $tag );
     $attributes = self::parse_attributes( $attributes );
 
     if ( in_array( $tag, self::$void ) ) {
@@ -110,7 +110,7 @@ class Html {
     }
 
     // This filter allows to you override the html result.
-    $html = apply_filters( "jp_toolkit_helpers_html_{$tag}", $html, $tag, $content, $attributes );
+    $html = apply_filters( "jp_toolkit_html_helper_html_{$tag}", $html, $tag, $content, $attributes );
 
     return $html;
   }
@@ -135,10 +135,10 @@ class Html {
     $attributes = wp_parse_args( $attributes );
 
     // Filter to allow overrides the src.
-    $src = apply_filters( 'jp_toolkit_helpers_html_img_src', $src, $attributes );
+    $src = apply_filters( 'jp_toolkit_html_helper_html_img_src', $src, $attributes );
 
     // Filter to allow add shorthands.
-    $shorthands = apply_filters( 'jp_toolkit_helpers_html_img_shorthand_handlers', [] );
+    $shorthands = apply_filters( 'jp_toolkit_html_helper_html_img_shorthand_handlers', [] );
 
     // Check if is a shorthand.
     foreach ( $shorthands as $handler ) {
@@ -147,12 +147,12 @@ class Html {
       }
 
       $handler = strpos( $src, ':' ) ? substr( $src, 0, strpos( $src, ':' ) ) : substr( $src, 0 );
-      if ( !has_filter( "jp_toolkit_helpers_html_img_shorthand_{$handler}" ) ) {
+      if ( !has_filter( "jp_toolkit_html_helper_html_img_shorthand_{$handler}" ) ) {
         continue;
       }
 
       // if $src starts with any of the shorthands update the $attributes.
-      $attributes = apply_filters( "jp_toolkit_helpers_html_img_shorthand_{$handler}", $attributes, $src );
+      $attributes = apply_filters( "jp_toolkit_html_helper_html_img_shorthand_{$handler}", $attributes, $src );
 
       // remove the $src, must be returned by the filter as part of $attributes array.
       $src = '';
@@ -168,7 +168,7 @@ class Html {
     $html = self::tag( 'img', '', $attributes );
 
     // Filter to allow overrides the output.
-    $html = apply_filters( 'jp_toolkit_helpers_html_img', $html, $attributes );
+    $html = apply_filters( 'jp_toolkit_html_helper_html_img', $html, $attributes );
 
     return $html;
   }

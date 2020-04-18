@@ -198,7 +198,7 @@ class Form {
     if ( !empty( $attributes['placeholder'] ) && !is_bool( $attributes['placeholder'] ) ) {
       $placeholder = $attributes['placeholder'];
     } elseif ( !empty( $attributes['placeholder'] ) && is_bool( $attributes['placeholder'] ) && $attributes['placeholder'] ) {
-      $placeholder = __( 'Select...', 'jpwp-toolkit' );
+      $placeholder = __( 'Select...', 'jp-toolkit' );
     }
 
     if ( !empty( $attributes['required'] ) && is_bool( $attributes['required'] ) && $attributes['required'] ) {
@@ -234,13 +234,13 @@ class Form {
    */
   public static function options( $options, $selected = '' ) {
     // Filter to allow add shorthands.
-    $shorthands = apply_filters( 'jpwp_toolkit_helpers_form_options_shorthands', [] );
+    $shorthands = apply_filters( 'jp_toolkit_html_helper_form_options_shorthands', [] );
 
     if ( is_string( $options ) && in_array( $options, $shorthands ) ) {
-      $options = apply_filters( "jpwp_toolkit_helpers_form_options_shorthand_{$options}", $options );
+      $options = apply_filters( "jp_toolkit_html_helper_form_options_shorthand_{$options}", $options );
     }
 
-    $options = (array) apply_filters( 'jpwp_toolkit_helpers_form_options', $options );
+    $options = (array) apply_filters( 'jp_toolkit_html_helper_form_options', $options );
 
     $html = '';
 
