@@ -1,0 +1,19 @@
+{
+  "name"              : "jprieton/jp-toolkit-html-helper",
+  "description"       : "A helper classes that provides a set of static methods for generating commonly used HTML tags.",
+  "keywords"          : [ "wordpress", "plugin", "theme", "toolkit"],
+  "type"              : "library",
+  "minimum-stability" : "stable",
+  "homepage"          : "https://github.com/jprieton/jp-toolkit-html-helper/", 
+  "require"           : {
+    "php" : ">=7"
+  },
+  "support"           : {
+    "issues" : "https://github.com/jprieton/jp-toolkit-html-helper/issues"
+  },  
+  "autoload"          : {
+    "psr-4"           : {
+      "JPToolkit\\HtmlHelper\\": "src/"
+    }
+  }
+}
