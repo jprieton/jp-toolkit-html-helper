@@ -28,26 +28,18 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-/**
- * Define plugin constants
- *
- * @since 0.1.0
- */
-define( 'JPTK_ABSPATH', plugin_dir_path( __FILE__ ) );
-
 // Autoloader
-require_once JPTK_ABSPATH . 'vendor/autoload.php';
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 // Check if the minimum requirements are met.
 if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
-  $title   = __( 'Error!', 'jp-toolkit' );
   $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit-html-helper' );
   $options = [
       'type' => 'error'
   ];
 
-  // Show notice for minimum PHP version required for JP Toolkit for WordPress.
+  // Show notice for minimum PHP version required for JP Toolkit HTML helper for WordPress.
   $notices = new WPTRT\AdminNotices\Notices();
-  $notices->add( 'jp-toolkit-php-warning', '', $message, $options );
+  $notices->add( 'jp-toolkit-html-helper-php-warning', '', $message, $options );
   $notices->boot();
 }
