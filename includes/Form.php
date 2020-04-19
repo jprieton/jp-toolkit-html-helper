@@ -191,13 +191,9 @@ class Form {
    * @return  string
    */
   public static function select( $options = [], $attributes = [] ) {
-    $placeholder = '';
+    $placeholder = $attributes['placeholder'] ?? '';
     $required    = false;
     $selected    = '';
-
-    if ( !empty( $attributes['placeholder'] ) ) {
-      $placeholder = $attributes['placeholder'];
-    }
 
     if ( !empty( $attributes['required'] ) && is_bool( $attributes['required'] ) && $attributes['required'] ) {
       $required = true;

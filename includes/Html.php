@@ -128,8 +128,12 @@ class Html {
    * @return  string
    */
   public static function img( $src, $attributes = [] ) {
+    $src = !empty( $src ) ? $src : $attributes['src'] ?? '';
+
     if ( empty( $src ) || !is_string( $src ) ) {
       return '';
+    } else {
+      unset( $attributes['src'] );
     }
 
     $attributes = wp_parse_args( $attributes );

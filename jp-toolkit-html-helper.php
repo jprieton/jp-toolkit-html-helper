@@ -3,7 +3,7 @@
  * Plugin Name:   JP Toolkit HTML helper for WordPress
  * Plugin URI:    https://github.com/jprieton/jp-toolkit-html-helper
  * Description:   JP Toolkit HTML helper contains a set of static methods for generating commonly used HTML and form tags.
- * Version:       1.0.0
+ * Version:       1.1.0
  * Author:        Javier Prieto
  * Author URI:    https://github.com/jprieton
  * Text Domain:   jp-toolkit-html-helper
