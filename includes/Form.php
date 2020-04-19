@@ -191,15 +191,9 @@ class Form {
    * @return  string
    */
   public static function select( $options = [], $attributes = [] ) {
-    $placeholder = '';
+    $placeholder = $attributes['placeholder'] ?? '';
     $required    = false;
     $selected    = '';
-
-    if ( !empty( $attributes['placeholder'] ) && !is_bool( $attributes['placeholder'] ) ) {
-      $placeholder = $attributes['placeholder'];
-    } elseif ( !empty( $attributes['placeholder'] ) && is_bool( $attributes['placeholder'] ) && $attributes['placeholder'] ) {
-      $placeholder = __( 'Select...', 'jp-toolkit' );
-    }
 
     if ( !empty( $attributes['required'] ) && is_bool( $attributes['required'] ) && $attributes['required'] ) {
       $required = true;
