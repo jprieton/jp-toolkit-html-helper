@@ -2,11 +2,11 @@
 /**
  * Plugin Name:   JP Toolkit HTML helper for WordPress
  * Plugin URI:    https://github.com/jprieton/jp-toolkit-html-helper
- * Description:   The Html class is a helper that provides a set of static methods for generating commonly used HTML tags.
+ * Description:   JP Toolkit HTML helper contains a set of static methods for generating commonly used HTML and form tags.
  * Version:       1.0.0
  * Author:        Javier Prieto
  * Author URI:    https://github.com/jprieton
- * Text Domain:   jp-toolkit
+ * Text Domain:   jp-toolkit-html-helper
  * Domain Path:   /languages/
  *
  * This program is free software: you can redistribute it and/or modify
@@ -41,7 +41,7 @@ require_once JPTK_ABSPATH . 'vendor/autoload.php';
 // Check if the minimum requirements are met.
 if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
   $title   = __( 'Error!', 'jp-toolkit' );
-  $message = __( 'JP Toolkit for WordPress requires PHP version 7.0 or later.', 'jp-toolkit' );
+  $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit-html-helper' );
   $options = [
       'type' => 'error'
   ];
