@@ -4,7 +4,7 @@
  * generating commonly used HTML tags
  *
  * @package       JPToolkit
- * @subpackage    Helpers
+ * @subpackage    RequestHelper
  */
 
 namespace JPToolkit\HtmlHelper;
@@ -21,6 +21,8 @@ defined( 'ABSPATH' ) || exit;
  * @see           http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html
  * @see           https://docs.phalconphp.com/en/latest/reference/tags.html#tag-service
  *
+ * @package       JPToolkit
+ * @subpackage    HtmlHelper
  * @since         0.1.0
  * @author        Javier Prieto
  */

@@ -4,7 +4,7 @@
  * commonly used HTML form tags.
  *
  * @package       JPToolkit
- * @subpackage    Helpers
+ * @subpackage    RequestHelper
  */
 
 namespace JPToolkit\HtmlHelper;
@@ -23,10 +23,10 @@ use JPToolkit\HtmlHelper\Html;
  * @see         http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html
  * @see         https://docs.phalconphp.com/en/latest/reference/tags.html#tag-service
  *
- * @package     JPToolkit
- * @subpackage  Helpers
- * @author      Javier Prieto
- * @since       0.3.0
+ * @package       JPToolkit
+ * @subpackage    HtmlHelper
+ * @author        Javier Prieto
+ * @since         0.3.0
  */
 class Form {
 
