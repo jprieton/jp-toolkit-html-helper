@@ -40,7 +40,7 @@ trait OptionsHandler {
     add_filter( 'jp_toolkit_html_helper_form_options_shorthand_handlers', [ $this, 'add_shorthand_handler' ] );
 
     // Add shorthands filters.
-    add_filter( "jp_toolkit_helpers_form_options_handler_{$this->handler}", [ $this, 'parse_shorthand_handler' ], 10, 2 );
+    add_filter( "jp_toolkit_html_helper_form_options_handler_{$this->handler}", [ $this, 'parse_shorthand_handler' ], 10, 2 );
   }
 
 }

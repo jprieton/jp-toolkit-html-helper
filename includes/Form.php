@@ -231,10 +231,16 @@ class Form {
     $shorthands = apply_filters( 'jp_toolkit_html_helper_form_options_shorthand_handlers', [] );
 
     if ( is_string( $options ) && in_array( $options, $shorthands ) ) {
-      $options = apply_filters( "jp_toolkit_helpers_form_options_handler_{$options}", $options );
+      $options = apply_filters( "jp_toolkit_html_helper_form_options_handler_{$options}", $options );
     }
 
-    $options = (array) apply_filters( 'jp_toolkit_html_helper_form_options', $options );
+    $options = apply_filters( 'jp_toolkit_html_helper_form_options', $options );
+
+    if ( empty( $options ) ) {
+      return '';
+    } elseif ( is_string( $options ) ) {
+      return self::option( $options, null, compact( 'selected' ) );
+    }
 
     $html = '';
 
@@ -258,9 +264,13 @@ class Form {
    * @param   array   $attr An array of HTML attributes.
    * @return  string
    */
-  public static function option( $value, $label = '', $attr = [] ) {
-    $attr['value'] = $value ?? $attr['value'] ?? $label;
-    $label         = $label ?? $value;
+  public static function option( $value, $label = null, $attr = [] ) {
+    $attr['value'] = $value ?? $attr['value'] ?? '';
+    $label         = $label ?? $attr['value'];
+
+    if ( empty( $attr['value'] ) && empty( $label ) ) {
+      return '';
+    }
 
     if ( isset( $attr['selected'] ) ) {
       $attr['selected'] = ($attr['selected'] === true) ?:
