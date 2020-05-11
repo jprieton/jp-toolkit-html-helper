@@ -6,7 +6,7 @@
  * Version:       1.1.0
  * Author:        Javier Prieto
  * Author URI:    https://github.com/jprieton
- * Text Domain:   jp-toolkit-html-helper
+ * Text Domain:   jp-toolkit
  * Domain Path:   /languages/
  *
  * This program is free software: you can redistribute it and/or modify
@@ -33,7 +33,7 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 // Check if the minimum requirements are met.
 if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
-  $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit-html-helper' );
+  $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit' );
   $options = [
       'type' => 'error'
   ];
@@ -42,4 +42,7 @@ if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
   $notices = new WPTRT\AdminNotices\Notices();
   $notices->add( 'jp-toolkit-html-helper-php-warning', '', $message, $options );
   $notices->boot();
+} else {
+  // Initialize the plugin
+  new JPToolkit\HtmlHelper\Init();
 }
