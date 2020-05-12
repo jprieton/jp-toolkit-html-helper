@@ -3,9 +3,10 @@
 /bin                         export-ignore
 /composer.json               export-ignore
 /composer.lock               export-ignore
-/jp-toolkit-html-helper      export-ignore
+/jp-toolkit-html-helper.php  export-ignore
 /nbproject                   export-ignore
 /phpunit.xml.dist            export-ignore
+/README.md                   export-ignore
 /tests                       export-ignore
 /.git                        export-ignore
 /.gitattributes              export-ignore

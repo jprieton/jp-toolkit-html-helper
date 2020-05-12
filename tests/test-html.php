@@ -5,7 +5,7 @@ use JPToolkit\HtmlHelper\Html;
 /**
  * Sample test case.
  */
-class TemplateTest extends WP_UnitTestCase {
+class TestHtml extends WP_UnitTestCase {
 
   /**
    * A single example test.
@@ -81,12 +81,6 @@ class TemplateTest extends WP_UnitTestCase {
     $this->assertEquals( Html::div( 'content' ), '<div>content</div>' );
     $this->assertEquals( Html::div( 'content', [ 'class' => 'class1', 'id' => 'id1' ] ), '<div class="class1" id="id1">content</div>' );
 
-    // Test image tag
-    // Default
-    $this->assertEquals( Html::img( 'http://path.to/image.jpg' ), '<img src="http://path.to/image.jpg" />' );
-    $this->assertEquals( Html::img( '', [ 'src' => 'http://path.to/image.jpg' ] ), '<img src="http://path.to/image.jpg" />' );
-    $this->assertEquals( Html::img( 'http://path.to/image-a.jpg', [ 'src' => 'http://path.to/image-b.jpg' ] ), '<img src="http://path.to/image-a.jpg" />' );
-
     $simple_list = [ 'red', 'blue', 'green', 'yellow' ];
     $nested_list = [
         'colors'  => [ 'red', 'blue', 'green', 'yellow' ],
@@ -105,6 +99,25 @@ class TemplateTest extends WP_UnitTestCase {
     $this->assertEquals( Html::ul( $nested_list, $attributes ), '<ul class="class1" id="id1"><li>colors<ul><li>red</li><li>blue</li><li>green</li><li>yellow</li></ul></li><li>numbers<ul><li>one</li><li>two</li><li>three</li><li>four</li></ul></li></ul>' );
     $this->assertEquals( Html::ol( $nested_list ), '<ol><li>colors<ol><li>red</li><li>blue</li><li>green</li><li>yellow</li></ol></li><li>numbers<ol><li>one</li><li>two</li><li>three</li><li>four</li></ol></li></ol>' );
     $this->assertEquals( Html::ol( $nested_list, $attributes ), '<ol class="class1" id="id1"><li>colors<ol><li>red</li><li>blue</li><li>green</li><li>yellow</li></ol></li><li>numbers<ol><li>one</li><li>two</li><li>three</li><li>four</li></ol></li></ol>' );
+  }
+
+  /**
+   * Tests img tags and shorthands
+   *
+   * @since 1.1.0
+   */
+  public function test_img() {
+    // Default
+    $this->assertEquals( Html::img( 'http://path.to/image.jpg' ), '<img src="http://path.to/image.jpg" />' );
+    $this->assertEquals( Html::img( '', [ 'src' => 'http://path.to/image.jpg' ] ), '<img src="http://path.to/image.jpg" />' );
+    $this->assertEquals( Html::img( 'http://path.to/image-a.jpg', [ 'src' => 'http://path.to/image-b.jpg' ] ), '<img src="http://path.to/image-a.jpg" />' );
+
+    // Pixel shorthand
+    $result = '<img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" '
+            . 'height="1" width="1" class="image-size-custom image-pixel" alt="Pixel image" />';
+    $this->assertEquals( Html::img( 'pixel' ), $result );
+    $this->assertEquals( Html::img( null, [ 'src' => 'pixel' ] ), $result );
+    $this->assertEquals( Html::img( 'pixel', [ 'src' => 'http://path.to/image.jpg' ] ), $result );
   }
 
 }

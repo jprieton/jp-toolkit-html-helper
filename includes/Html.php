@@ -4,7 +4,7 @@
  * generating commonly used HTML tags
  *
  * @package       JPToolkit
- * @subpackage    Helpers
+ * @subpackage    HtmlHelper
  */
 
 namespace JPToolkit\HtmlHelper;
@@ -21,6 +21,8 @@ defined( 'ABSPATH' ) || exit;
  * @see           http://www.yiiframework.com/doc-2.0/yii-helpers-basehtml.html
  * @see           https://docs.phalconphp.com/en/latest/reference/tags.html#tag-service
  *
+ * @package       JPToolkit
+ * @subpackage    HtmlHelper
  * @since         0.1.0
  * @author        Javier Prieto
  */
@@ -44,8 +46,8 @@ class Html {
    *
    * @since   0.1.0
    *
-   * @param   string       $tag       The tag name.
-   * @param   array|string $attributes An array of html attributes.
+   * @param   string       $tag           The tag name.
+   * @param   array|string $attributes    An array of html attributes.
    * @return  string
    */
   public static function open( $tag, $attributes = [] ) {
@@ -87,9 +89,9 @@ class Html {
    *
    * @since   0.1.0
    *
-   * @param   string       $tag       The tag name.
-   * @param   string       $content   The content between tags. Is ignored if is a void tag.
-   * @param   array|string $attributes An array of html attributes.
+   * @param   string       $tag           The tag name.
+   * @param   string       $content       The content between tags. Is ignored if is a void tag.
+   * @param   array|string $attributes    An array of html attributes.
    * @return  string
    */
   public static function tag( $tag, $content = '', $attributes = [] ) {
@@ -120,8 +122,8 @@ class Html {
    *
    * @since   0.1.0
    *
-   * @param   string       $src        The image src.
-   * @param   array|string $attributes An array of html attributes.
+   * @param   string       $src           The image src.
+   * @param   array|string $attributes    An array of html attributes.
    *
    * @link    http://png-pixel.com/
    *
@@ -182,7 +184,7 @@ class Html {
    *
    * @since   0.1.0
    *
-   * @param   array|string $attr An array of html attributes.
+   * @param   array|string    $attr   An array of html attributes.
    * @return  string
    */
   public static function parse_attributes( $attr = [] ) {
@@ -233,8 +235,8 @@ class Html {
    *
    * @since   0.1.0
    *
-   * @param   string $tag       The tag name or the shorthand.
-   * @param   array  $attributes An array of html attributes.
+   * @param   string $tag           The tag name or the shorthand.
+   * @param   array  $attributes    An array of html attributes.
    * @return  array
    */
   public static function parse_shorthand( &$tag, &$attributes = [] ) {
@@ -353,8 +355,8 @@ class Html {
    *
    * @since   0.1.0
    *
-   * @param   string $tag       The tag name.
-   * @param   array  $arguments      An array that may contain content and attributes.
+   * @param   string $tag         The tag name.
+   * @param   array  $arguments   An array that may contain content and attributes.
    * @return  string
    */
   public static function __callStatic( $tag, $arguments ) {

@@ -3,10 +3,10 @@
  * Plugin Name:   JP Toolkit HTML helper for WordPress
  * Plugin URI:    https://github.com/jprieton/jp-toolkit-html-helper
  * Description:   JP Toolkit HTML helper contains a set of static methods for generating commonly used HTML and form tags.
- * Version:       1.1.0
+ * Version:       1.2.0
  * Author:        Javier Prieto
  * Author URI:    https://github.com/jprieton
- * Text Domain:   jp-toolkit-html-helper
+ * Text Domain:   jp-toolkit
  * Domain Path:   /languages/
  *
  * This program is free software: you can redistribute it and/or modify
@@ -28,26 +28,21 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-/**
- * Define plugin constants
- *
- * @since 0.1.0
- */
-define( 'JPTK_ABSPATH', plugin_dir_path( __FILE__ ) );
-
 // Autoloader
-require_once JPTK_ABSPATH . 'vendor/autoload.php';
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 // Check if the minimum requirements are met.
 if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
-  $title   = __( 'Error!', 'jp-toolkit' );
-  $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit-html-helper' );
+  $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit' );
   $options = [
       'type' => 'error'
   ];
 
-  // Show notice for minimum PHP version required for JP Toolkit for WordPress.
+  // Show notice for minimum PHP version required for JP Toolkit HTML helper for WordPress.
   $notices = new WPTRT\AdminNotices\Notices();
-  $notices->add( 'jp-toolkit-php-warning', '', $message, $options );
+  $notices->add( 'jp-toolkit-html-helper-php-warning', '', $message, $options );
   $notices->boot();
+} else {
+  // Initialize the plugin
+  new JPToolkit\HtmlHelper\Init();
 }
