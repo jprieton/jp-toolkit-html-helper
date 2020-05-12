@@ -177,7 +177,7 @@ class Form {
    * @return  string
    */
   public static function file( $attributes = [] ) {
-    $attributes = array_merge( $attributes, [ 'type' => 'file' ] );
+    $attributes = array_merge( $attributes, [ 'type' => 'file', 'value' => null ] );
     return self::input( $attributes );
   }
 
