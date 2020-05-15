@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f54edb1c8650704c1b18fc4dc77f9b42",
+    "content-hash": "6d1f23dfd2aaf205aadad50ce0473c62",
     "packages": [
         {
             "name": "wptrt/admin-notices",
