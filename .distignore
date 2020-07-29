@@ -4,6 +4,7 @@ composer.lock
 nbproject
 phpunit.xml.dist
 tests
+.editorconfig
 .distignore
 .git
 .gitattributes
