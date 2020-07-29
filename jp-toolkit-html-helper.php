@@ -1,13 +1,17 @@
 <?php
+
 /**
- * Plugin Name:   JP Toolkit HTML helper for WordPress
- * Plugin URI:    https://github.com/jprieton/jp-toolkit-html-helper
- * Description:   JP Toolkit HTML helper contains a set of static methods for generating commonly used HTML and form tags.
- * Version:       1.3.0
- * Author:        Javier Prieto
- * Author URI:    https://github.com/jprieton
- * Text Domain:   jp-toolkit
- * Domain Path:   /languages/
+ * Plugin Name:         JP Toolkit HTML Helper for WordPress
+ * Plugin URI:          https://github.com/jprieton/jp-toolkit-html-helper
+ * Description:         JP Toolkit HTML helper contains a set of static methods for generating commonly used HTML and form tags.
+ * Tags:                html, form, jp-toolkit, helper
+ * Version:             1.3.1
+ * Requires at least:   5.2
+ * Tested up to:        5.4.1
+ * Author:              Javier Prieto
+ * Author URI:          https://github.com/jprieton
+ * Text Domain:         jp-toolkit
+ * Domain Path:         /languages/
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -25,7 +29,7 @@
  * @package JPToolkit
  */
 
-// Exit if accessed directly.
+// If this file is called directly, abort.
 defined( 'ABSPATH' ) || exit;
 
 // Autoloader
@@ -33,7 +37,7 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 // Check if the minimum requirements are met.
 if ( version_compare( PHP_VERSION, '7.0', '<' ) ) {
-  $message = __( 'JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit' );
+  $message = __( 'JP Toolkit HTML Helper for WordPress requires PHP version 7.0 or later.', 'jp-toolkit' );
   $options = [
       'type' => 'error'
   ];

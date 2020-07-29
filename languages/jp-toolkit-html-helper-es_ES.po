@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: JP Toolkit HTML helper for WordPress 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/jp-toolkit-html-"
 "helper\n"
-"POT-Creation-Date: 2020-04-19T01:35:26-03:00\n"
-"PO-Revision-Date: 2020-04-19 00:35-0400\n"
+"POT-Creation-Date: 2020-07-29T11:22:37-03:00\n"
+"PO-Revision-Date: 2020-07-29 10:24-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Plugin Name of the plugin
-msgid "JP Toolkit HTML helper for WordPress"
-msgstr "JP Toolkit HTML helper para WordPress"
+msgid "JP Toolkit HTML Helper for WordPress"
+msgstr "JP Toolkit HTML Helper para WordPress"
 
 #. Plugin URI of the plugin
 msgid "https://github.com/jprieton/jp-toolkit-html-helper"
@@ -41,10 +41,14 @@ msgstr "Javier Prieto"
 msgid "https://github.com/jprieton"
 msgstr "https://github.com/jprieton"
 
-#: jp-toolkit-html-helper.php:44
-msgid "JP Toolkit HTML helper for WordPress requires PHP version 7.0 or later."
+#: includes/Handlers/ImgPixelHandler.php:67
+msgid "Pixel image"
+msgstr "Imagen de un píxel"
+
+#: jp-toolkit-html-helper.php:40
+msgid "JP Toolkit HTML Helper for WordPress requires PHP version 7.0 or later."
 msgstr ""
-"JP Toolkit HTML helper para WordPress requiere PHP versión 7.0 o superior."
+"JP Toolkit HTML Helper para WordPress requiere PHP versión 7.0 o superior."
 
 #~ msgid "Select..."
 #~ msgstr "Selecciona..."

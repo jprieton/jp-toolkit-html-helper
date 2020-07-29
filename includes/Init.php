@@ -37,7 +37,8 @@ class Init {
     add_action( 'init', [ $this, 'add_html_img_handlers' ] );
     add_action( 'init', [ $this, 'add_form_options_handlers' ] );
 
-    // Add shortcodes
+    // Add texdomain
+    add_action( 'init', [ $this, 'load_textdomain' ] );
   }
 
   /**
@@ -66,6 +67,15 @@ class Init {
    */
   public function add_shortcodes_handlers() {
     new Shortcodes();
+  }
+
+  /**
+   * Load plugin texdomain
+   *
+   * @since         1.3.1
+   */
+  public function load_textdomain() {
+    load_plugin_textdomain( 'jp-toolkit', false, dirname( plugin_basename( __DIR__ ) ) . '/languages' );
   }
 
 }
