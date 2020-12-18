@@ -291,6 +291,10 @@ class Html {
       return '';
     }
 
+    if ( is_email($content) ) {
+      $content = antispambot( $content );
+    }
+
     $content = $content ?: antispambot( $email );
     $email   = antispambot( 'mailto:' . $email );
 

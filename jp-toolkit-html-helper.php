@@ -5,9 +5,9 @@
  * Plugin URI:          https://github.com/jprieton/jp-toolkit-html-helper
  * Description:         JP Toolkit HTML helper contains a set of static methods for generating commonly used HTML and form tags.
  * Tags:                html, form, jp-toolkit, helper
- * Version:             1.3.1
+ * Version:             1.3.2
  * Requires at least:   5.2
- * Tested up to:        5.4.1
+ * Tested up to:        5.6
  * Author:              Javier Prieto
  * Author URI:          https://github.com/jprieton
  * Text Domain:         jp-toolkit
